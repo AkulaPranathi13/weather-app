@@ -5,7 +5,7 @@ const geocode = (address, callback) => {
 
     request({ url, json:true }, (error, {body})=>{
         if(error){
-            callback('Unable to connect to location services.',undefined) // if we don't provide a second argument, it would default to undefined.
+            callback('Unable to connect to location services.',undefined)
         } else if (body.message === "Forbidden") {
             callback('Something went wrong. Try with another address.')
         }else if (body.features.length === 0) {

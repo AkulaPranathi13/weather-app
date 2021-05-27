@@ -3,13 +3,10 @@ const search = document.querySelector('input')
 const m1 = document.querySelector('#m1')
 const m2 = document.querySelector('#m2')
 
-weatherForm.addEventListener('submit', (e) => { // e is short for "event"
+weatherForm.addEventListener('submit', (e) => { 
     e.preventDefault()
 
-    const location = search.value
-    //const location = encodeURI("26 Ricther Avenue wellington south africa")
-    // const location = "!"
-
+    const location = search.value;
     m1.textContent = 'Loading...'
 
     fetch('/weather?address=' + encodeURI(location)).then((response) => {
